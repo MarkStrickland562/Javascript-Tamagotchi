@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ping Pong</title>
+  </head>
+  <body>
+    <form id="tamagotchi-form">
+      <label for="name">Enter a name:</label>
+      <input id="name" type="text">
+      <button type="submit">Submit</button>
+    </form>
+    <div class="play">
+      <form id="feed-form">
+        Select what you would like to feed the tamagotchi with.
+        <label><input type="radio" name="food" value="Grass" checked="checked">Grass</label>
+        <label><input type="radio" name="food" value="Berries">Berries</label>
+        <label><input type="radio" name="food" value="Meat">Meat</label>
+        <br>
+        <button class="btn-submit" type="submit">Feed</button>
+      </form>
+
+      <form id="fun-form">
+        Select what activity you would like to play with the tamagotchi.
+        <label><input type="radio" name="fun" value="Pet" checked="checked">Pet</label>
+        <label><input type="radio" name="fun" value="Walk">Walk</label>
+        <label><input type="radio" name="fun" value="SkyDive">Sky Dive</label>
+        <br>
+        <button class="btn-submit" type="submit">Do activity</button>
+      </form>
+
+      <form id="sleep-form">
+        Select how long the tamagotchi should sleep.
+        <label><input type="radio" name="sleep" value="Nap" checked="checked">Nap</label>
+        <label><input type="radio" name="sleep" value="LongNap">Long Nap</label>
+        <label><input type="radio" name="sleep" value="Coma">Coma</label>
+        <br>
+        <button class="btn-submit" type="submit">Go to sleep</button>
+      </form>
+    </div>
+    <div class="info">
+      <p>Food Level: <span id="foodLevel"></span></p>
+      <p>Fun Level: <span id="funLevel"></span></p>
+      <p>Sleep Level: <span id="sleepLevel"></span></p>
+    </div>
+    <br>
+    <div class="result">
+      <p><span id="tamagotchi"></span> has died of <span id="reason"></span></p>
+      <button type="button" id="playAgain">Play again?</button>
+    </div>
+  </body>
+</html>
