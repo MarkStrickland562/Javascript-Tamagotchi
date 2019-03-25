@@ -6,8 +6,13 @@ import { Tamagotchi } from './tamagotchi.js';
 
 $(document).ready(function() {
   let tama;
+  let timeOut;
   $("#tamagotchi-form").submit(function(event){
     event.preventDefault();
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+    }, 3000);
     $(".play").show();
     $(".info").show();
     let name = $("#name").val();
@@ -53,12 +58,27 @@ $(document).ready(function() {
     let food = $("input:radio[name=food]:checked").val();
     if (food === "Grass"){
       tama.eatGrass();
+      clearTimeout(timeOut);
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+      }, 3000);
     }
     else if(food === "Berries"){
       tama.eatBerries();
+      clearTimeout(timeOut);
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+      }, 3000);
     }
     else{
       tama.eatMeat();
+      clearTimeout(timeOut);
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+      }, 3000);
     }
   });
 
@@ -67,12 +87,27 @@ $(document).ready(function() {
     let fun = $("input:radio[name=fun]:checked").val();
     if (fun === "Pet"){
       tama.pet();
+      clearTimeout(timeOut);
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+      }, 3000);
     }
     else if(fun === "Walk"){
       tama.walk();
+      clearTimeout(timeOut);
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+      }, 3000);
     }
     else{
       tama.skyDive();
+      clearTimeout(timeOut);
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+      }, 3000);
     }
   });
 
@@ -81,11 +116,26 @@ $(document).ready(function() {
     let sleep = $("input:radio[name=sleep]:checked").val();
     if (sleep === "Nap"){
       tama.nap();
+      clearTimeout(timeOut);
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+      }, 3000);
     }
     else if(sleep === "LongNap"){
       tama.longNap();
+      clearTimeout(timeOut);
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+      }, 3000);
     }
     else{
+      clearTimeout(timeOut);
+      timeOut = setTimeout(function() {
+        location.reload();
+        alert("Game over! Your Tamagotchi has run away!");
+      }, 3000);
       tama.coma();
     }
   });
@@ -93,6 +143,4 @@ $(document).ready(function() {
   $("#playAgain").click(function(){
     location.reload();
   })
-
-
 });
