@@ -7,6 +7,26 @@ import { Tamagotchi } from './tamagotchi.js';
 $(document).ready(function() {
   let tama;
   let timeOut;
+
+  $.ajax({
+        url: `http://api.giphy.com/v1/gifs/random?api_key=${process.env.API_KEY}&tag=Tamagotchi`,
+        // api_key: '5nRqoCICo7FpdrGJXtx9Uj079f1KAQ8Z',
+        // tag: 'Tamagotchi',
+        type: 'GET',
+        // crossDomain: true,
+        // dataType: 'jsonp',
+        data: {
+          format: 'json'
+        },
+        success: function(response) {
+         $('.giphy').html(`<img src="${response.data.image_url}">`);
+          console.log(response);
+        },
+        error: function() {
+          $('#errors').text("There was an error processing your request. Please try again.");
+        }
+  });
+
   $("#tamagotchi-form").submit(function(event){
     event.preventDefault();
       timeOut = setTimeout(function() {
